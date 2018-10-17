@@ -200,8 +200,12 @@ endif
 #BOARD_SEPOLICY_VERS := 28.0
 #BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
-# Security patch level
-VENDOR_SECURITY_PATCH := 2018-07-01
+# Vintf
+PRODUCT_ENFORCE_VINTF_MANIFEST := true
+
+# Exclude deprecated healthd from framework manifest
+DEVICE_FRAMEWORK_MANIFEST_FILE += \
+    system/libhidl/vintfdata/manifest_healthd_exclude.xml
 
 # Wi-Fi
 BOARD_HAS_QCOM_WLAN := true
